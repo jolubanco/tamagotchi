@@ -29,16 +29,23 @@ public class Tamagotchi {
         return saude;
     }
 
-    public void setSaude() {
-        this.saude += 10;
+    public void setSaude(int valor) {
+        this.saude += valor;
+        if (this.saude > 100){
+            this.saude = 100;
+        }
     }
 
     public int getFome() {
         return fome;
     }
 
-    public void setFome() {
-        this.fome -= 10;
+    public void alimenta(int valor) {
+        this.fome -= valor;
+        this.setSaude(2);
+        if (this.fome < 0) {
+            this.fome = 0;
+        }
     }
 
     public int getEnergia() {
@@ -47,15 +54,27 @@ public class Tamagotchi {
 
     public void dormir(){
         this.energia += 20;
-        this.fome += 5;
-    }
-    public void brincar(){
-        this.energia -= 10;
-        this.fome += 10;
+        this.alimenta(-5);
+        this.setSaude(2);
+        if (this.energia > 100){
+           this.energia = 100;
+        }
     }
 
+    public void brincar(){
+        this.energia -= 15;
+        this.alimenta(-10);
+        this.setSaude(2);
+        if (this.energia < 0){
+            this.energia = 0;
+        } else if (this.energia <= 5){
+            System.out.println("Preciso Dormir!!!");
+        }
+    }
+    //preciso fazer algo para quando a energia estiver muito baixo, forçar a dormir
+
     public int getHumor(){
-        return (this.saude - this.fome);
+        return (this.getSaude() + this.getEnergia() - this.getFome());
 //        return Math.abs(this.saude - this.fome);
     }
 
@@ -78,6 +97,7 @@ public class Tamagotchi {
 
     public int escolheOpcao(){
         this.setIdade();
+        this.setSaude(-1);
         Scanner ler = new Scanner(System.in);
 
         // [ A ] declarando e instanciando uma agenda de contatos
@@ -102,29 +122,33 @@ public class Tamagotchi {
             System.out.printf("%d. %s\n", i+1, agenda.get(i));
         }
 
-        System.out.printf("\nInforme o número: \n");
+        System.out.print("Informe o número: ");
         return ler.nextInt();
     }
 
     public void realizaAcao( int numero){
         if(numero == 1){
-            this.setFome();
+            this.alimenta(10);
+            System.out.println("\nNhami, que gostoso!");
         } else if (numero == 2){
             this.brincar();
+            System.out.println("\nEstou muito feliz por brincar com você!");
         } else if (numero == 3) {
             this.dormir();
+            System.out.println("\nQue soninho...");
         } else if (numero == 4) {
-            this.setSaude();
+            this.setSaude(10);
+            System.out.println("\nEcaaa, tem gosto ruim esse remédio!");
         } else if (numero == 5) {
-            System.out.println("Meu Humor está em " + this.getHumor() + "!");
+            System.out.println("\nMeu Humor está em " + this.getHumor() + "!");
         } else if (numero == 6) {
-            System.out.println("Minha idade está em " + this.getIdade() + "!");
+            System.out.println("\nMinha idade está em " + this.getIdade() + "!");
         } else if (numero == 7) {
-            System.out.println("Minha fome está em " + this.getFome() + "!");
+            System.out.println("\nMinha fome está em " + this.getFome() + "!");
         } else if (numero == 8) {
-            System.out.println("Minha saúde está em " + this.getSaude() + "!");
+            System.out.println("\nMinha saúde está em " + this.getSaude() + "!");
         } else if (numero == 9) {
-            System.out.println("Minha energia está em " + this.getEnergia() + "!");
+            System.out.println("\nMinha energia está em " + this.getEnergia() + "!");
         }
 
     }

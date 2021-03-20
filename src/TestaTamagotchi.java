@@ -3,7 +3,7 @@ public class TestaTamagotchi {
     public static void main(String[] args) {
 
         Scanner leitor = new Scanner(System.in);
-        System.out.println("Qual o nome do seu Tamagotchi: ");
+        System.out.print("Qual o nome do seu Tamagotchi: ");
         String nome = leitor.nextLine(); //nextLine consegue ser um nome composto, enquanto next le apenas a primeira palavra
 
         Tamagotchi bichinho = new Tamagotchi(nome);
@@ -11,18 +11,22 @@ public class TestaTamagotchi {
         //DUVIDA AQUI: se criar uma variavel 'boolean valida = bichinho.getSaude() > 0 & bichinho.getFome() < 100'
         //o bichinho nunca morre!
 
+        System.out.print("x--------------------------------------------------------x \n"+
+                "Olá, meu nome é " + bichinho.getNome() +
+                " sou o seu novo Tamotchi. \nLembre-se que você precisa me alimentar e cuidar\n" +
+                "de mim. Minha fome não pode chegar a 100\ne minha" +
+                " saúde não pode chegar a 0!\nVamos nos divertir?\n" +
+                "x--------------------------------------------------------x");
+
         while(bichinho.getSaude() > 0 & bichinho.getFome() < 100) {
 
-            System.out.println("\n------------------------------------------\n __         __\n" +
+            System.out.println("\n __         __\n" +
                     "/  \\.-' '-./  \\ \n" +
                     "\\    -   -    /\n" +
                     " |   o   o   |\n" +
                     " \\  .-'''-.  /\n" +
                     "  '-\\__Y__/-'\n" +
-                    "     `---`\n" +
-                    "  \n");
-
-            System.out.println("Olá, meu nome é " + bichinho.getNome());
+                    "     `---`\n");
 
 //--------------------------------
 //            int recebeOpcao = bichinho.defineOpcao();
