@@ -138,7 +138,7 @@ public class Tamagotchi {
             System.out.println("\nQue soninho...");
         } else if (numero == 4) {
             this.setSaude(10);
-            System.out.println("\nEcaaa, tem gosto ruim esse remédio!");
+            System.out.println("\nEcaaa, que gosto ruim!");
         } else if (numero == 5) {
             System.out.println("\nMeu Humor está em " + this.getHumor() + "!");
         } else if (numero == 6) {

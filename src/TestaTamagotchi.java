@@ -47,7 +47,7 @@ public class TestaTamagotchi {
 //            System.out.println("Saude "+ bichinho.getSaude());
         }
 
-        System.out.println("\n------------------------------------------\n __         __\n" +
+        System.out.println("x--------------------------------------------------------x\n __         __\n" +
                     "/  \\.-' '-./  \\ \n" +
                     "\\    -   -    /\n" +
                     " |   X   X   |\n" +
@@ -55,7 +55,7 @@ public class TestaTamagotchi {
                     "  '-\\__Y__/-'\n" +
                     "     `---`\n" +
                     "  \n");
-            System.out.println("Você me deixou morrer infeliz :x");
+            System.out.println("Você me deixou morrer, infeliz :x");
        }
 
 
