@@ -127,28 +127,50 @@ public class Tamagotchi {
     }
 
     public void realizaAcao( int numero){
-        if(numero == 1){
-            this.alimenta(10);
-            System.out.println("\nNhami, que gostoso!");
-        } else if (numero == 2){
-            this.brincar();
-            System.out.println("\nEstou muito feliz por brincar com você!");
-        } else if (numero == 3) {
-            this.dormir();
-            System.out.println("\nQue soninho...");
-        } else if (numero == 4) {
-            this.setSaude(10);
-            System.out.println("\nEcaaa, que gosto ruim!");
-        } else if (numero == 5) {
-            System.out.println("\nMeu Humor está em " + this.getHumor() + "!");
-        } else if (numero == 6) {
-            System.out.println("\nMinha idade está em " + this.getIdade() + "!");
-        } else if (numero == 7) {
-            System.out.println("\nMinha fome está em " + this.getFome() + "!");
-        } else if (numero == 8) {
-            System.out.println("\nMinha saúde está em " + this.getSaude() + "!");
-        } else if (numero == 9) {
-            System.out.println("\nMinha energia está em " + this.getEnergia() + "!");
+        switch (numero) {
+
+            case 1:
+                this.alimenta(10);
+                System.out.println("\nNhami, que gostoso!");
+                break;
+
+            case 2:
+                this.brincar();
+                System.out.println("\nEstou muito feliz por brincar com você!");
+                break;
+
+            case 3:
+                this.dormir();
+                System.out.println("\nQue soninho...");
+                break;
+
+            case 4:
+                this.setSaude(10);
+                System.out.println("\nEcaaa, que gosto ruim!");
+                break;
+
+            case 5:
+                System.out.println("\nMeu Humor está em " + this.getHumor() + "!");
+                break;
+
+            case 6:
+                System.out.println("\nMinha idade está em " + this.getIdade() + "!");
+                break;
+
+            case 7:
+                System.out.println("\nMinha fome está em " + this.getFome() + "!");
+                break;
+
+            case 8:
+                System.out.println("\nMinha saúde está em " + this.getSaude() + "!");
+                break;
+
+            case 9:
+                System.out.println("\nMinha energia está em " + this.getEnergia() + "!");
+                break;
+
+            default:
+                System.out.println("\nValor inválido!");
         }
 
     }
